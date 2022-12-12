@@ -1,17 +1,16 @@
-stages:
-  - build-docker-image
-  - push-image-to-docker-hub
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-build-docker-image:
-  stage: build-docker-image
-  script:
-    - docker info
-    - docker build -t sivashankaar1998/pipeline
-    
-Push Docker Image to DockerHub:
-  stage: push-image-to-docker-hub
-  before_script:
-    - docker login -u sivashankaar1998 -p Rocking0@
-  script:
-    - docker info
-    - docker push sivashankaar1998/pipeline
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . -t sivashankaar1998/pipeline

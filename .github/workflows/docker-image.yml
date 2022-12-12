@@ -1,19 +1,17 @@
-name: Docker Image CI
+stages:
+  - build-docker-image
+  - push-image-to-docker-hub
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker login -u sivashankar1998 -p Rocking0@
-          -docker build -t sivashankaar1998/pipeline
+build-docker-image:
+  stage: build-docker-image
+  script:
+    - docker info
+    - docker build -t sivashankaar1998/pipeline
+    
+Push Docker Image to DockerHub:
+  stage: push-image-to-docker-hub
+  before_script:
+    - docker login -u sivashankaar1998 -p Rocking0@
+  script:
+    - docker info
+    - docker push sivashankaar1998/pipeline

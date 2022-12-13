@@ -4,7 +4,8 @@ FROM openjdk:11-slim as build
 #Information around who maintains the image
 MAINTAINER eazybytes.com
 
-RUN mvn clean install
+RUN mvn clean 
+mvn install
 
 # Add the application's jar to the container
 COPY target/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar

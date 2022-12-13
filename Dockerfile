@@ -1,5 +1,6 @@
 #Start with a base image containing Java runtime
-FROM openjdk:11-slim as build
+FROM adoptopenjdk/maven-openjdk11
+
 
 #Information around who maintains the image
 MAINTAINER eazybytes.com

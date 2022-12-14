@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: login to docker
-      run: docker login -u sivashankaar1998@gmail.com -p pwd
+      run: docker login -u sivashankar1998 -p Rock2@1998
     - name: Build the Docker images
       run: docker build . -t sivashankaar1998/pipeline
     - name: Push image

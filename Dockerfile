@@ -7,10 +7,10 @@ MAINTAINER eazybytes.com
 
 COPY . .
 
-RUN mvn install
+RUN mvn install && mv target/gitpipeline-0.0.1-SNAPSHOT.jar gitpipeline-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
-COPY /target/gitpipeline-0.0.1-SNAPSHOT.jar gitpipeline-0.0.1-SNAPSHOT.jar
+#COPY target/gitpipeline-0.0.1-SNAPSHOT.jar gitpipeline-0.0.1-SNAPSHOT.jar
 
 #execute the application
 ENTRYPOINT ["java","-jar","/gitpipeline-0.0.1-SNAPSHOT.jar"]

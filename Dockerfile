@@ -10,7 +10,7 @@ COPY . .
 RUN mvn install
 
 # Add the application's jar to the container
-COPY target/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar
+COPY target/gitpipeline-0.0.1-SNAPSHOT.jar gitpipeline-0.0.1-SNAPSHOT.jar
 
 #execute the application
-ENTRYPOINT ["java","-jar","/accounts-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/gitpipeline-0.0.1-SNAPSHOT.jar"]

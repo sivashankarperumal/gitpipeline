@@ -12,5 +12,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: login to docker
+      run: docker login -u sivashankaar1998 -p Rocking0@
     - name: Build the Docker images
       run: docker build . -t sivashankaar1998/pipeline
+    -name: Push image
+      run: docker push sivashankaar1998/pipeline

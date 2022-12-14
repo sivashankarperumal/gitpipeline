@@ -15,6 +15,6 @@ jobs:
     - name: login to docker
       run: docker login -u sivashankar1998 -p Rock2@1998
     - name: Build the Docker images
-      run: docker build . -t sivashankaar1998/pipeline
+      run: docker build . -t sivashankar1998/pipeline
     - name: Push image
-      run: docker push sivashankaar1998/pipeline
+      run: docker push sivashankar1998/pipeline
